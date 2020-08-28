@@ -1,19 +1,23 @@
 # Unit 11 Express Homework: Note Taker
 
-## Description
+## Description   
 
 Create an application that can be used to write, save, and delete notes. This application will use an express backend and save and retrieve note data from a JSON file.
-
+******* REFERENCE HOT RESTAURANT ASSIGNMENT FOR THIS ********** 
 * The application frontend has already been created, it's your job to build the backend and connect the two.
 
-* The following HTML routes should be created:
+* The following HTML routes should be created:  (lines 9 thru 27 will be inside a routing folder - one js file for html, and one for api notes)
 
   * GET `/notes` - Should return the `notes.html` file.
-
+  app.get(`/notes`, function(req, res) {
+    res.sendFile(path.join(_dirname, "notes.html"));
+  })
   * GET `*` - Should return the `index.html` file
-
+app.get(`*`, function(req, res){
+  res.sendFile(path.join(_dirname, "index.html));
+})
 * The application should have a `db.json` file on the backend that will be used to store and retrieve notes using the `fs` module.
-
+ const fs - require("fs")
 * The following API routes should be created:
 
   * GET `/api/notes` - Should read the `db.json` file and return all saved notes as JSON.
