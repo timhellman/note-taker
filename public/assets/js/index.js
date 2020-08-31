@@ -127,8 +127,8 @@ const renderNoteList = (notes) => {
     noteListItems.push(create$li("No saved Notes", false));
   }
 
-  notes.forEach((note) => {
-    const $li = create$li(note.title).data(note);
+  notes.forEach((note,i) => {
+    const $li = create$li(note.title).data({...note,id:i}); //this was changed to spread the notes, giving each note an id reflecting the length of the note array
     noteListItems.push($li);
   });
 
